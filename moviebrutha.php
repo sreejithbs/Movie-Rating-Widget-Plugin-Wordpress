@@ -13,6 +13,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Solution to blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+header('Access-Control-Allow-Origin: *');
+
 // plugin_dir_path() returns the trailing slash!
 define( 'MOVIEBRUTHA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MOVIEBRUTHA_PLUGIN_URL', plugins_url( basename( plugin_dir_path(__FILE__) ), basename( __FILE__ ) ) . '/');
@@ -78,9 +81,15 @@ add_action('wp_enqueue_scripts','includes_css_js');
 add_action('admin_enqueue_scripts','includes_css_js');
 function includes_css_js() {
 	wp_enqueue_style( 'bootstrap', MOVIEBRUTHA_PLUGIN_URL .'includes/css/bootstrap.min.css' );
+	wp_enqueue_style( 'movie_brutha_main', MOVIEBRUTHA_PLUGIN_URL .'includes/css/main.css' );
+	wp_enqueue_style( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css' );
+	wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900' );
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+
 	wp_enqueue_script( 'bootstrap', MOVIEBRUTHA_PLUGIN_URL .'includes/js/bootstrap.min.js', array( 'jquery' ), true );
 	wp_enqueue_script( 'parsley', MOVIEBRUTHA_PLUGIN_URL .'includes/js/parsley.min.js', array( 'jquery' ), true );
 	wp_enqueue_script( 'movie_brutha_custom', MOVIEBRUTHA_PLUGIN_URL .'includes/js/movie_brutha_custom.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js', array( 'jquery' ), true );
 }
 // end of Include CSS & JS
 
@@ -416,8 +425,8 @@ function render_logs_listing() {
 			$columns = array(
 				'cb'        		=> '<input type="checkbox" />', //Render a checkbox instead of text
 				'created_at'        => 'Submission Date',
-				'runTime'       	=> 'RunTime',
-				'ageOfFilm' 		=> 'Age Of Film',
+				'runTime'       	=> 'Runtime',
+				'ageOfFilm' 		=> 'Age of Film',
 				'directorName'		=> 'Director Name & Score',
 				'ratingScore'      	=> 'Rating Score',
 				'genre'    			=> 'Genre',
@@ -462,7 +471,7 @@ function render_logs_listing() {
 			global $wpdb;
 			$rating_widget_logs = $wpdb->prefix . 'rating_widget_logs';
 
-			$per_page = 10;
+			$per_page = 50;
 
 			$columns = $this->get_columns();
 			$hidden = array();
@@ -531,52 +540,122 @@ function displayWidgetbox() {
 	$importedLists = $wpdb->get_results("SELECT * FROM $rating_widget_imports", ARRAY_A);
 	?>
 
-	<div id="formDiv">
-		<form method="POST" action="#" id="widget_form_id" data-parsley-validate>
 
-			<input type="number" name="run_time" id="run_time" placeholder="Enter Runtime (mins) between 60 and 240" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="60" data-parsley-max="240">
+	<style>
 
-			<input type="number" name="age_of_film" id="age_of_film" placeholder="Age of Film between 0 and 5" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="5">
+	.rate-box-outer .the-mv-rate-box .rate-head h2{
+		margin-top: 0;
 
-			<select name="director_score" id="director_score" data-parsley-required="true">
-				<option value="">-- Choose a Director -- </option>
-				<?php foreach ($importedLists as $single) { ?>
-					<option value="<?php echo $single['directorScore'];?>">
-						<?php echo $single['directorName'];?>
-					</option>
-				<?php } ?>
-			</select>
+	}
 
-			<input type="checkbox" name="genres[]" class="genres" value="Action" data-parsley-required="true" data-parsley-mincheck="1">Action
-			<input type="checkbox" name="genres[]" class="genres" value="Adventure">Adventure
-			<input type="checkbox" name="genres[]" class="genres" value="Animation">Animation
-			<input type="checkbox" name="genres[]" class="genres" value="Biography">Biography
-			<input type="checkbox" name="genres[]" class="genres" value="Comedy">Comedy
-			<input type="checkbox" name="genres[]" class="genres" value="Crime">Crime
-			<input type="checkbox" name="genres[]" class="genres" value="Documentary">Documentary
-			<input type="checkbox" name="genres[]" class="genres" value="Drama">Drama
-			<input type="checkbox" name="genres[]" class="genres" value="Family">Family
-			<input type="checkbox" name="genres[]" class="genres" value="Fantasy">Fantasy
-			<input type="checkbox" name="genres[]" class="genres" value="History">History
-			<input type="checkbox" name="genres[]" class="genres" value="Horror">Horror
-			<input type="checkbox" name="genres[]" class="genres" value="Music">Music
-			<input type="checkbox" name="genres[]" class="genres" value="Musical">Musical
-			<input type="checkbox" name="genres[]" class="genres" value="Mystery">Mystery
-			<input type="checkbox" name="genres[]" class="genres" value="Romance">Romance
-			<input type="checkbox" name="genres[]" class="genres" value="Sci_Fi">Sci_Fi
-			<input type="checkbox" name="genres[]" class="genres" value="Sport">Sport
-			<input type="checkbox" name="genres[]" class="genres" value="Thriller">Thriller
-			<input type="checkbox" name="genres[]" class="genres" value="War">War
-			<input type="checkbox" name="genres[]" class="genres" value="Western">Western
+	.rate-box-outer .the-mv-rate-box .rate-head h2:before{
+		display: none;
+	}
+	.rate-box-outer .forms ul{
+		padding-left: 0;
+	}
+	.rate-box-outer .forms li{
+		list-style: none;
+	}
+	.rate-box-outer .parsley-errors-list li{
+		font: 12px/23px "Poppins", sans-serif;
+	    color: #e42222;
+	    position: absolute;
+	    bottom: -22px;
+	}
 
-			<input type="submit" name="submit_widget_form" id="submit_widget_form" value="Send" />
+	.forms button:hover{
+		background: #FFB726 !important;
+	}
 
-		</form>
-	</div>
+	.rate-box-outer{
+	    z-index: 999999;
+	}
 
-	<div id="scoreDiv" style="display: none;">
-		Your Score : <span id="score_span"></span>
-		<button type="button" id="retake_rating">Re-Take Score Rating</button>
+	.select2-container{
+		z-index: 99999999;
+		position: relative;
+	}
+
+	.rate-box-outer{
+		display: none;
+	}
+
+	</style>
+
+	<div class="rate-box-outer">
+		<div class="the-mv-rate-box" id="listaCategoriaA">
+			<div class="rate-head"><i>
+				<img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>'includes/img/rate-star.png'; ?>" alt=""></i><h2>Ant’s Movie Model Predictor</h2>
+			</div>
+			<div id="formDiv">
+				<form method="POST" action="#" id="widget_form_id" data-parsley-validate>
+					<div class="forms">
+						<div class="input-holder">
+							<input type="number" name="run_time" id="run_time" placeholder="Enter Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="60" data-parsley-max="240">
+						</div>
+						<div class="input-holder">
+							<input type="number" name="age_of_film" id="age_of_film" placeholder="Enter Age of Film (0-5) years" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="5">
+						</div>
+						<div class="input-holder">
+							<div class="sl-bx">
+								<select name="director_score" id="director_score" data-parsley-required="true">
+									<option value=""> Select Film’s Director (choose Unknown/Other if unlisted) </option>
+									<?php foreach ($importedLists as $single) { ?>
+										<option value="<?php echo $single['directorScore'];?>">
+											<?php echo $single['directorName'];?>
+										</option>
+									<?php } ?>
+								</select>
+							</div>
+						</div>
+						<div class="input-holder">
+							<div class="sl-bx">
+								<select name="genres[]" class="js-select2 genres" multiple="multiple" data-parsley-required="true">
+									<option value="">Choose Film’s Genre(s)</option>
+									<option value="Action">Action</option>
+									<option value="Adventure">Adventure</option>
+									<option value="Animation">Animation</option>
+									<option value="Biography">Biography</option>
+									<option value="Comedy">Comedy</option>
+									<option value="Crime">Crime</option>
+									<option value="Documentary">Documentary</option>
+									<option value="Drama">Drama</option>
+									<option value="Family">Family</option>
+									<option value="Fantasy">Fantasy</option>
+									<option value="History">History</option>
+									<option value="Horror">Horror</option>
+									<option value="Music">Music</option>
+									<option value="Musical">Musical</option>
+									<option value="Mystery">Mystery</option>
+									<option value="Romance">Romance</option>
+									<option value="Sci_Fi">Sci_Fi</option>
+									<option value="Sport">Sport</option>
+									<option value="Thriller">Thriller</option>
+									<option value="War">War</option>
+									<option value="Western">Western</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="footer">
+						<button type="submit" name="submit_widget_form" id="submit_widget_form">
+							SUBMIT FOR MOVIE RATING
+
+					<span class="overlay-btn"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+						</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="forms" id="scoreDiv" style="display: none;">
+				<h3>Score: <span id="score_span"></span></h3>
+				<button type="button" id="retake_rating">Re-Take Score Rating</button>
+			</div>
+		</div>
+		<button class="rate-button" id="btCategoriaA">
+			<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>'includes/img/rate-star.png'; ?>" alt=""></i><span>Ant’s Movie Rating Model</span>
+		</button>
 	</div>
 
    <?php
@@ -651,7 +730,7 @@ function handleFormSubmission(){
 
 	if($responseData['result']){
 
-		$score = $responseData['result'][0]['Score'];
+		$score = number_format((float)$responseData['result'][0]['Score'], 1, '.', '');
 		$insertLog = $wpdb->query("INSERT INTO $rating_widget_logs (runTime, ageOfFilm, directorName, directorScore, ratingScore, genre, ipAddress) VALUES ('$run_time', '$age_of_film', '$director_name', '$director_score', '$score', '$checked_genresArr', '$ip_address') ");
 
 		if($insertLog){
@@ -666,7 +745,6 @@ function handleFormSubmission(){
 
 	echo json_encode($tempArr);
 	die();
-
 }
 add_action( 'wp_ajax_nopriv_handleFormSubmission', 'handleFormSubmission' );
 add_action( 'wp_ajax_handleFormSubmission', 'handleFormSubmission' );

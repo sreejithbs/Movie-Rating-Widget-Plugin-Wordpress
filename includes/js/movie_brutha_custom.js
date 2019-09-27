@@ -7,6 +7,8 @@
         $("#widget_form_id").submit(function(e) {
             e.preventDefault();
 
+            $(".overlay-btn").show();
+
             var run_time = $("#run_time").val();
             var age_of_film = $("#age_of_film").val();
             var director_score = $("#director_score").val();
@@ -23,11 +25,11 @@
             // });
 
             var checked_genres = [];
-            var genres = $('input[name="genres[]"]').map(function () {
-                if($(this).is(":checked")){
-                    checked_genres.push($(this).val());
+            var genres = $(".genres > option").map(function() {
+                if ($(this).is(':selected')) {
+                    checked_genres.push(this.value);
                 }
-                return $(this).is(":checked");
+                return $(this).is(':selected');
             }).get();
 
             $.ajax({
@@ -46,9 +48,14 @@
                 },
                 success: function(response) {
                     if(response.status){
+
+                        $(".js-select2").val(null).trigger('change');
+
                         $("#score_span").text(response.score);
                         $("#formDiv").hide();
+                        $(".overlay-btn").hide();
                         $("#scoreDiv").show();
+
                     } else {
                         console.log(data.message);
                     }
@@ -66,6 +73,20 @@
             $("#scoreDiv").hide();
             $("#formDiv").show();
         });
+
+        $(".js-select2").select2({
+            closeOnSelect : false,
+            placeholder : "Select Genres",
+            allowClear: true,
+        });
+
+        $('#btCategoriaA').click(function() {
+            $('#listaCategoriaA').slideToggle('slow', function() {
+                $('#btCategoriaA').toggleClass('showing', $(this).is(':visible'));
+            });
+        });
+
+        $(".rate-box-outer").show();
     });
 
 })(jQuery);
