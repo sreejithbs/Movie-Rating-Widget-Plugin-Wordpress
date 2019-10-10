@@ -1,16 +1,22 @@
 
+
+
 .rate-box-outer {
     position: fixed;
-    width:463px;
+    width:500px;
     bottom: 120px;
-    right: 15px
+    right: 15px;
+}
+
+.rate-box-outer1 {
+
 }
 
 .rate-box-outer .showing {
     border-radius: 50px;
     padding: 0!important;
     border: 0!important;
-    background-color: #fff!important;
+    background-color: #fff;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -27,45 +33,56 @@
     -ms-justify-content: center;
     -webkit-box-pack: center;
     justify-content: center;
-    -ms-flex-pack: center
+    -ms-flex-pack: center;
+        width: auto !important;
+}
+.rate-box-outer .rate-button.showing i{
+    background-color: #FFB726 !important;
 }
 
+
 .rate-box-outer .showing i {
-    width: 40px!important;
-    height: 40px!important;
-    left: -40px!important;
-    background: url(../img/close.png) no-repeat center center!important
+    left: -55px!important;
+    background: url(../img/close.png) no-repeat center center!important;
 }
 
 .rate-box-outer .showing i img {
-    display: none
+    display: none;
+}
+.error{
+    color:red;
 }
 
 .rate-box-outer .showing span {
-    display: none
+    display: none;
 }
-
+.rate-box-outer .rate-button:hover, .rate-box-outer .rate-button:focus{
+     background: #FFB726;
+}
 .rate-box-outer .rate-button {
     background: #FFB726;
-    border: 2px solid #E9A825;
-    padding: 4px 28px;
+    padding: 4px 45px;
     position: absolute;
-    bottom: -50px;
+    bottom: -75px;
     right: 0;
-    font: 500 17px/24px "Poppins", sans-serif;
+    font: 500 26px/24px "Poppins", sans-serif;
     color: #000;
     border-right: 0;
-    height: 36px
+    height:60px;
+    border-radius: 5px;
+    text-align: left;
+    outline: 0;
+
 }
 
 .rate-box-outer .rate-button i {
-    background: #fff;
-    width: 40px!important;
-    height: 40px!important;
+    background-color: #fff !important;
+    width: 61px!important;
+    height: 61px!important;
     border-radius: 50px;
     position: absolute;
-    left: -20px;
-    top: -4px;
+    left: -36px;
+    top: -1px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -85,23 +102,30 @@
     -ms-flex-pack: center;
     -webkit-box-shadow: 2px 0px 9px -1px rgba(0, 0, 0, 0.47);
     -moz-box-shadow: 2px 0px 9px -1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 0px 9px -1px rgba(0, 0, 0, 0.47)
+    box-shadow: 2px 0px 9px -1px rgba(0, 0, 0, 0.47);
 }
-
+.rate-box-outer .rate-button i img{
+   width: 33px;
+}
 .rate-box-outer .the-mv-rate-box {
     width: 100%;
     height: auto;
     background: #EFEFEF;
     border-radius: 10px;
-    border: 1px solid #5B5B5B;
+    border: 1px solid #e8e8e8;
     overflow: hidden;
     margin-right: 15px;
-    display: none
+    display: none;
+
+    -webkit-box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
+box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 }
 
 .rate-box-outer .the-mv-rate-box .rate-head {
     background: #fff;
-    padding-left: 24px;
+    padding-left: 25px;
+    height:70px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -113,23 +137,25 @@
     -ms-flex-align: center;
     -webkit-box-align: center;
     align-items: center;
-    height: 62px
 }
 
 .rate-box-outer .the-mv-rate-box .rate-head i {
-    margin-right: 8px
+    margin-right: 8px;
+    width: 30px;
 }
 
 .rate-box-outer .the-mv-rate-box .rate-head h2 {
     margin-bottom: 0;
-    font: 500 17px/23px "Poppins", sans-serif
+    padding-top: 0;
+    color: #333;
+    font: 500 22px/23px "Poppins", sans-serif;
 }
 
 .rate-box-outer .the-mv-rate-box .footer {
     padding: 15px 24px;
     width: 100%;
     height: 80px;
-    background: #fff
+    background: #fff;
 }
 
 .rate-box-outer .the-mv-rate-box .footer button {
@@ -140,32 +166,32 @@
     border-radius: 5px;
     font: 500 17px/23px "Poppins", sans-serif;
     color: #fff;
-    border: 2px solid #111;
+    border: 2px solid #ececec;
     position: relative;
 }
 
 .rate-box-outer .the-mv-rate-box .footer button:hover {
     background: #FFB726;
     color: #111;
-    border: 2px solid #E9A825
+    border: 2px solid #E9A825;
 }
 
 .forms {
-    padding: 27px 24px 35px;
-    height: 100%
+    padding: 10px 24px 35px;
+    height: 100%;
 }
 
 .forms .input-holder {
-    position: relative
+    position: relative;
 }
 
 .forms h3 {
     font: 500 20px/23px "Poppins", sans-serif;
-    width: 100%
+    width: 100%;
 }
 
 .forms h3>span {
-    color: #777
+    color: #777;
 }
 
 .forms button {
@@ -176,8 +202,12 @@
     width: auto;
     border-radius: 5px;
     font: 500 13px/23px "Poppins", sans-serif;
-    margin-top: 10px
+    margin-top: 10px;
 }
+.forms label{
+ font:14px/23px "Poppins", sans-serif;
+}
+
 
 .forms input[type=email],
 .forms input[type=number],
@@ -194,20 +224,22 @@
     appearance: none;
     background: #fff;
     border: none;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     outline: none;
     display: block;
     height: 50px;
     padding: 7px 15px;
     border-radius: 5px;
-    width: 100%
+    width: 100%;
 }
 
 .forms select {
     padding-right: 30px;
-    color: #797979
+    color: #797979;
 }
-
+.forms .sl-bx{
+    position: relative;
+}
 .forms .sl-bx:after {
     content: "";
     width: 0;
@@ -217,27 +249,28 @@
     border-top: 5px solid #cbcbcb;
     position: absolute;
     top: 23px;
-    right: 15px
+    right: 15px;
+    z-index:9;
 }
 
 .forms::-webkit-input-placeholder {
     opacity: 1;
-    color: #B8B8B8
+    color: #B8B8B8;
 }
 
 .forms:-moz-placeholder {
     opacity: 1;
-    color: #B8B8B8
+    color: #B8B8B8;
 }
 
 .forms::-moz-placeholder {
     opacity: 1;
-    color: #B8B8B8
+    color: #B8B8B8;
 }
 
 .forms:-ms-input-placeholder {
     opacity: 1;
-    color: #B8B8B8
+    color: #B8B8B8;
 }
 
 .select2-results__option {
@@ -255,7 +288,7 @@
     border-radius: 4px;
     background-color: #EFEFEF;
     margin-right: 20px;
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .select2-results__option[aria-selected=true]:before {
@@ -268,59 +301,59 @@
     height: 21px;
     font-size: 14px;
     width: 20px!important;
-    font-weight: 200!important
+    font-weight: 200!important;
 }
 
 .select2-container--default .select2-results__option[aria-selected=true] {
-    background-color: #fff
+    background-color: #fff;
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
     background-color: #eaeaeb;
-    color: #272727
+    color: #272727;
 }
 
 .select2-container--default .select2-selection--multiple {
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
-    border-radius: 4px
+    border-radius: 4px;
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     border-color: #f77750;
-    border-width: 2px
+    border-width: 2px;
 }
 
 .select2-container--default .select2-selection--multiple {
-    border-width: 2px
+    border-width: 2px;
 }
 
 .select2-container--open .select2-dropdown--below {
     border-radius: 6px;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .select2-selection .select2-selection--multiple:after {
-    content: 'hhghgh'
+    content: 'hhghgh';
 }
 
-.select2-container {
-    width: 412px!important
-}
+ .select2-container {
+    width: 100% !important;
+ }
 
-.select2-container--open .select2-dropdown--below {
-    width: 412px!important
+/* .select2-container--open .select2-dropdown--below {
+    width: 449px!important;
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-    width: 412px!important
-}
+    width: 449px!important;
+} */
 
 .select2-container--default .select2-selection--multiple {
-    width:412px!important;
+/*     width:449px!important; */
     font: 13px/23px "Poppins", sans-serif;
     color: #797979;
     -webkit-appearance: none;
@@ -335,38 +368,38 @@
     padding: 7px 15px;
     border-radius: 5px;
     width: 100%;
-    border: 0!important
+    border: 0!important;
 }
 
-.select2-results {}
+
 
 .select2-results::-webkit-scrollbar {
-    width: 8px
+    width: 8px;
 }
 
 .select2-results::-webkit-scrollbar-track {
     background: #eee;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .select2-results::-webkit-scrollbar-thumb {
     background: #d4d8df;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .select2-results::-webkit-scrollbar-thumb:hover {
-    background: #a9a9a9
+    background: #a9a9a9;
 }
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
-    border-radius: 5px!important
+    border-radius: 5px!important;
 }
 
 .select2-container--default .select2-search--inline .select2-search__field {
     width: 100%!important;
     font: 14px/23px "Poppins", sans-serif;
-    color: #797979
+    color: #797979;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
@@ -374,22 +407,22 @@
     border: none;
     padding-right: 20px;
     position: relative;
-    font: 14px/23px "Poppins", sans-serif
+    font: 14px/23px "Poppins", sans-serif;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     position: absolute;
     right: 5px;
     font-weight: 200!important;
-    font-size: 16px!important
+    font-size: 16px!important;
 }
 
 .select2-container .select2-selection--multiple {
-    min-height: 50px!important
+    min-height: 50px!important;
 }
 
 .d-none {
-    display: none
+    display: none;
 }
 
 
@@ -408,25 +441,308 @@
     display: none;
 }
 
+.movie_brutha_logo{
+    width: 102px;
+    height: 102px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-box-shadow: 2px 0px 17px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 0px 17px -8px rgba(0,0,0,0.75);
+    box-shadow: 2px 0px 17px -8px rgba(0,0,0,0.75);
+    border:3px solid #fff;
+    position: absolute;
+    top:-33px;
+    z-index: 9999;
+    background:#111;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 
-@media (max-width:1679px) {
+}
+
+.movie_brutha_logo img{
+    width:85px;
+    }
+.rate-box-outer-forms{
+    margin-bottom: 35px;
+    margin-top: 35px;
+}
+
+.movie-theme-outer h3{
+    font:500 23px/27px "Poppins", sans-serif;
+    margin-bottom:10px;
+}
+
+
+.movie-theme-outer p{
+    font:14px/23px "Poppins", sans-serif;
+}
+
+.movie-theme-outer .panel-title a{
+    color: #e9a825 !important;
+    font:500 14px/23px "Poppins", sans-serif;
+    text-decoration: none !important;
+    outline: 0;
+}
+
+.movie-theme-outer .panel-group .panel-heading{
+background:#363839;
+}
+.movie-theme-outer .panel-title .collapsed{
+     color: #fff !important;
+
+}
+
+@media (max-width: 1679px) {
+ .forms .sl-bx:after{
+    top:24px;
+}
+.movie_brutha_logo{
+        top: -22px;
+}
+.forms input[type=email], .forms input[type=number], .forms input[type=password],
+.forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
+    margin-bottom: 5px;
+    height: 40px !important;
+}
+.select2-container .select2-selection--multiple {
+    min-height: 40px!important;
+        padding: 3px 15px;
+}
+.rate-box-outer .rate-button {
+    bottom: -65px;
+    font: 500 20px/24px "Poppins", sans-serif;
+    height: 44px;
+    padding: 4px 38px;
+}
+.rate-box-outer .rate-button i img {
+    width: 27px;
+}
+.rate-box-outer .rate-button i {
+    width: 45px!important;
+    height: 45px!important;
+    border-radius: 50px;
+    left: -28px;
+}
+ .forms {
+    padding: 10px 24px 15px;
+}
+
+.forms label {
+    font: 13px/23px "Poppins", sans-serif;
+}
+.rate-box-outer .the-mv-rate-box .rate-head {
+    padding-left: 20px;
+    height: 52px;
+}
+
+.rate-box-outer .the-mv-rate-box .rate-head h2 {
+          font: 500 18px/23px "Poppins", sans-serif;
+}
+.movie_brutha_logo img {
+        width: 65px;
+}
+
     .rate-box-outer {
         position: fixed;
-        bottom: 80px
+        bottom: 73px;
     }
-    .rate-box-outer .the-mv-rate-box .footer button {
-        background: #111;
-        padding: 7px 25px;
-        width: 100%;
-        border: 0;
-        border-radius: 5px;
-        font: 500 15px/23px "Poppins", sans-serif
+.rate-box-outer .the-mv-rate-box .rate-head i {
+    margin-right: 8px;
+    width: 25px;
+}
+ .rate-box-outer .the-mv-rate-box .footer button {
+background: #111;
+    padding: 9px 25px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    border: 2px solid #ececec;
+    font: 500 17px/23px "Poppins", sans-serif;
+
     }
     .rate-box-outer .the-mv-rate-box .footer {
-        height: 67px
+        height: 60px;
+        padding: 7px 24px;
     }
-    .rate-box-outer .the-mv-rate-box .rate-head {
-        height: 50px
+   .movie_brutha_logo {
+    width: 82px;
+    height: 82px;
+  }
+}
+
+@media(max-width: 1339px){
+.rate-box-outer .the-mv-rate-box .rate-head h2{
+        font: 500 24px/23px "Poppins", sans-serif;
+}
+.rate-box-outer .the-mv-rate-box .rate-head {
+    padding-left: 20px;
+    height: 70px;
+ }
+  .movie_brutha_logo {
+    width: 92px;
+    height: 92px;
+     top: -27px;
+ }
+ .movie_brutha_logo img {
+    width: 64px;
+ }
+ .rate-box-outer .rate-button {
+    font: 500 21px/24px "Poppins", sans-serif;
+  }
+}
+
+@media(max-width:991px){
+.rate-box-outer .the-mv-rate-box .rate-head {
+    padding-left: 20px;
+    height: 43px;
+}
+
+.forms input[type=email], .forms input[type=number], .forms input[type=password], .forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
+    margin-bottom: 5px;
+    height: 32px !important;
+        padding: 2px 15px;
+}
+.select2-container .select2-selection--multiple {
+    min-height: 30px!important;
+}
+
+}
+
+@media(max-width: 767px){
+.forms label {
+    font: 11px/16px "Poppins", sans-serif;
+}
+.rate-box-outer .the-mv-rate-box .footer {
+    height: 50px;
     }
+.forms .sl-bx:after {
+    top: 15px;
+}
+    .rate-box-outer .rate-button {
+    font: 500 19px/24px "Poppins", sans-serif;
+    padding-right: 15px;
+}
+    .rate-box-outer {
+    width: 295px;
+  }
+  .select2-container--default.select2-container--focus .select2-selection--multiple {
+    width: 243px!important;
+}
+/* .select2-container {
+    width: 243px!important;
+} */
+/* .select2-container--default .select2-selection--multiple {
+    width: 243px!important;
+ }
+ */
+ .rate-box-outer .the-mv-rate-box .footer button{
+     font: 500 13px/23px "Poppins", sans-serif;
+         padding: 4px 25px;
+ }
+
+ .rate-box-outer .the-mv-rate-box .rate-head h2 {
+     margin-bottom: 0;
+     font: 500 14px/23px "Poppins", sans-serif;
+ }
+ .rate-box-outer .rate-button i img {
+    width: 22px;
+ }
+
+}
+
+@media(max-width:479px){
+
+.rate-box-outer {
+    bottom: 44px;
+}
+.rate-box-outer .showing {
+    right: -13px !important;
+}
+.rate-box-outer .the-mv-rate-box .rate-head {
+    padding-left: 20px;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+ }
+.movie_brutha_logo {
+    width: 72px;
+    height: 72px;
+        top: -26px;
+}
+.movie_brutha_logo img {
+    width: 55px;
+}
+.forms {
+    padding: 1px 24px 10px;
+ }
+ .rate-box-outer .the-mv-rate-box .rate-head h2 {
+
+    font: 500 16px/23px "Poppins", sans-serif;
+}
+.rate-box-outer .rate-button {
+    bottom: -43px;
+    font: 500 16px/24px "Poppins", sans-serif;
+    height: 40px;
+    padding: 4px 32px;
+    }
+    .rate-box-outer .rate-button i {
+    width: 40px!important;
+    height: 40px!important;
+        left: -18px;
+
+ }
+ .rate-box-outer .the-mv-rate-box .footer {
+    height: 52px;
+    padding: 4px 24px;
+ }
+.forms input[type=email], .forms input[type=number], .forms input[type=password], .forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
+    margin-bottom: 0;
+}
+
+}
+
+
+/* @media only screen and (orientation: landscape) { } */
+
+/* Landscape */
+@media screen
+  and (max-width: 767px)
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+    .forms {
+    padding:0px 24px 15px;
+    overflow: auto;
+    height: 110px;
+}
+    .movie_brutha_logo {
+    width: 72px;
+    height: 72px;
+       top: -23px;
+  }
+  .movie_brutha_logo img {
+    width: 44px;
+}
+.rate-box-outer {
+        bottom: 50px;
+}
+.rate-box-outer .rate-button {
+     bottom: -45px;
+    height: 38px;
+    font: 500 16px/24px "Poppins", sans-serif;
+}
+.rate-box-outer .showing i {
+    left: -39px!important;
+}
+.rate-box-outer .rate-button i {
+    width: 40px!important;
+    height: 40px!important;
+    left: -17px;
+}
+
+
 }

@@ -1,0 +1,356 @@
+.rate-box-outer-forms .the-mv-rate-box {
+  width: 100%;
+  height: auto;
+  background: #EFEFEF;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+  margin-right: 15px;
+  -webkit-box-shadow: 2px 0px 17px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 0px 17px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 0px 17px -12px rgba(0, 0, 0, 0.75); }
+  .rate-box-outer-forms .the-mv-rate-box .rate-head {
+    background: #fff;
+    padding-left: 25px;
+    height: 70px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center; }
+    .rate-box-outer-forms .the-mv-rate-box .rate-head i {
+      margin-right: 8px;
+      width: 30px; }
+    .rate-box-outer-forms .the-mv-rate-box .rate-head h2 {
+      margin-bottom: 0;
+      padding-top: 0;
+      color: #333;
+      margin-top: 4px;
+      font: 500 22px/23px "Poppins", sans-serif; }
+      .rate-box-outer-forms .the-mv-rate-box .rate-head h2:before {
+        display: none; }
+  .rate-box-outer-forms .the-mv-rate-box .forms {
+    padding: 10px 24px 35px;
+    height: 100%; }
+  .rate-box-outer-forms .the-mv-rate-box .forms .input-holder {
+    position: relative; }
+  .rate-box-outer-forms .the-mv-rate-box .forms h3 {
+    font: 500 20px/23px "Poppins", sans-serif;
+    width: 100%; }
+  .rate-box-outer-forms .the-mv-rate-box .forms h3 > span {
+    color: #777; }
+  .rate-box-outer-forms .the-mv-rate-box .forms button {
+    background: #FFB726;
+    color: #111;
+    border: 2px solid #E9A825;
+    padding: 5px 10px;
+    width: auto;
+    border-radius: 5px;
+    font: 500 13px/23px "Poppins", sans-serif;
+    margin-top: 10px; }
+  .rate-box-outer-forms .the-mv-rate-box .forms label {
+    font: 14px/23px "Poppins", sans-serif; }
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=email],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=number],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=password],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=tel],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=text],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=url],
+  .rate-box-outer-forms .the-mv-rate-box .forms select,
+  .rate-box-outer-forms .the-mv-rate-box .forms textarea {
+    font: 13px/23px "Poppins", sans-serif;
+    color: #797979;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #fff;
+    border: none;
+    margin-bottom: 10px;
+    outline: none;
+    display: block;
+    height: 50px;
+    padding: 7px 15px;
+    border-radius: 5px;
+    width: 100%; }
+  .rate-box-outer-forms .the-mv-rate-box .forms select {
+    padding-right: 30px;
+    color: #797979; }
+  .rate-box-outer-forms .the-mv-rate-box .forms .sl-bx {
+    position: relative; }
+  .rate-box-outer-forms .the-mv-rate-box .forms .sl-bx:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #cbcbcb;
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    z-index: 9; }
+  .rate-box-outer-forms .the-mv-rate-box .forms::-webkit-input-placeholder {
+    opacity: 1;
+    color: #B8B8B8; }
+  .rate-box-outer-forms .the-mv-rate-box .forms:-moz-placeholder {
+    opacity: 1;
+    color: #B8B8B8; }
+  .rate-box-outer-forms .the-mv-rate-box .forms::-moz-placeholder {
+    opacity: 1;
+    color: #B8B8B8; }
+  .rate-box-outer-forms .the-mv-rate-box .forms:-ms-input-placeholder {
+    opacity: 1;
+    color: #B8B8B8; }
+
+.rate-box-outer-forms .select2-results__option {
+  padding-right: 20px;
+  vertical-align: middle;
+  font: 14px/23px "Poppins", sans-serif; }
+
+.rate-box-outer-forms .select2-results__option:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  background-color: #EFEFEF;
+  margin-right: 20px;
+  vertical-align: middle; }
+
+.rate-box-outer-forms .select2-results__option[aria-selected=true]:before {
+  background: url(../img/ok.png) no-repeat center center !important;
+  color: #E9A825;
+  background-color: #111 !important;
+  border: 0;
+  display: inline-block;
+  padding-left: 3px;
+  height: 21px;
+  font-size: 14px;
+  width: 20px !important;
+  font-weight: 200 !important; }
+
+.rate-box-outer-forms .select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #fff; }
+
+.rate-box-outer-forms .select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #eaeaeb;
+  color: #272727; }
+
+.rate-box-outer-forms .select2-container--default .select2-selection--multiple {
+  margin-bottom: 10px; }
+
+.rate-box-outer-forms .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+  border-radius: 4px; }
+
+.rate-box-outer-forms .select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: #f77750;
+  border-width: 2px; }
+
+.rate-box-outer-forms .select2-container--default .select2-selection--multiple {
+  border-width: 2px; }
+
+.rate-box-outer-forms .select2-container--open .select2-dropdown--below {
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.rate-box-outer-forms .select2-selection .select2-selection--multiple:after {
+  content: 'hhghgh'; }
+
+.rate-box-outer-forms .select2-container {
+  width: 100% !important; }
+
+.rate-box-outer-forms .select2-container--open .select2-dropdown--below {
+  width: 100% !important; }
+
+.rate-box-outer-forms .select2-container--default.select2-container--focus .select2-selection--multiple {
+  width: 100% !important; }
+
+.rate-box-outer-forms .select2-container--default .select2-selection--multiple {
+  width: 100% !important;
+  font: 13px/23px "Poppins", sans-serif;
+  color: #797979;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: none;
+  margin-bottom: 0px;
+  outline: none;
+  display: block;
+  min-height: 50px;
+  padding: 7px 15px;
+  border-radius: 5px;
+  width: 100%;
+  border: 0 !important; }
+
+.rate-box-outer-forms .entry .entry-content .select2-container--open .select2-dropdown--below {
+  width: 100% !important; }
+
+.rate-box-outer-forms .select2-results::-webkit-scrollbar {
+  width: 8px; }
+
+.rate-box-outer-forms .select2-results::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px; }
+
+.rate-box-outer-forms .select2-results::-webkit-scrollbar-thumb {
+  background: #d4d8df;
+  border-radius: 10px; }
+
+.rate-box-outer-forms .select2-results::-webkit-scrollbar-thumb:hover {
+  background: #a9a9a9; }
+
+.rate-box-outer-forms .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
+.rate-box-outer-forms .select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+  border-radius: 5px !important; }
+
+.rate-box-outer-forms .select2-container--default .select2-search--inline .select2-search__field {
+  width: 100% !important;
+  font: 14px/23px "Poppins", sans-serif;
+  color: #797979; }
+
+.rate-box-outer-forms .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  border-radius: 25px;
+  border: none;
+  padding-right: 20px;
+  position: relative;
+  font: 14px/23px "Poppins", sans-serif; }
+
+.rate-box-outer-forms .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  position: absolute;
+  right: 5px;
+  font-weight: 200 !important;
+  font-size: 16px !important; }
+
+.rate-box-outer-forms .select2-container .select2-selection--multiple {
+  min-height: 50px !important; }
+
+.rate-box-outer-forms .d-none {
+  display: none; }
+
+.rate-box-outer-forms .overlay-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.59);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none; }
+
+.rate-box-outer-forms .movie_brutha_logo {
+  width: 102px;
+  height: 102px;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-shadow: 2px 0px 17px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 0px 17px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 0px 17px -8px rgba(0, 0, 0, 0.75);
+  border: 3px solid #fff;
+  position: absolute;
+  top: -33px;
+  z-index: 9999;
+  background: #111;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.rate-box-outer-forms .movie_brutha_logo img {
+  width: 76px; }
+
+.rate-box-outer-forms .footer {
+  padding: 15px 24px;
+  width: 100%;
+  height: 80px;
+  background: #fff; }
+  .rate-box-outer-forms .footer button {
+    background: #111;
+    padding: 10px 25px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    font: 500 17px/23px "Poppins", sans-serif;
+    color: #fff;
+    border: 2px solid #ececec;
+    position: relative; }
+  .rate-box-outer-forms .footer button:hover {
+    background: #FFB726;
+    color: #111;
+    border: 2px solid #E9A825; }
+
+.rate-box-outer-forms .overlay-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.59);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none; }
+
+.rate-box-outer-forms .parsley-errors-list {
+  padding-left: 0 !important; }
+
+.rate-box-outer-forms .parsley-errors-list li {
+  font: 12px/23px "Poppins", sans-serif;
+  color: #e42222;
+  position: absolute;
+  bottom: -22px;
+  list-style: none; }
+
+.select2-dropdown {
+  z-index: 99999; }
+
+@media (max-width: 1679px) {
+  .rate-box-outer-forms .the-mv-rate-box .forms .sl-bx:after {
+    top: 19px; }
+  .movie_brutha_logo {
+    top: -22px; }
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=email],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=number],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=password],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=tel],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=text],
+  .rate-box-outer-forms .the-mv-rate-box .forms input[type=url],
+  .rate-box-outer-forms .the-mv-rate-box .forms select,
+  .rate-box-outer-forms .the-mv-rate-box .forms textarea {
+    margin-bottom: 5px;
+    height: 40px !important; }
+  .rate-box-outer-forms .the-mv-rate-box .forms label {
+    font: 12px/20px "Poppins", sans-serif; } }
