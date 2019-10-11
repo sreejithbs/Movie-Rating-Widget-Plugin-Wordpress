@@ -32,7 +32,7 @@
       padding-top: 0;
       color: #333;
       margin-top: 4px;
-      font: 500 22px/23px "Poppins", sans-serif; }
+      font: 500 22px/23px "Poppins", sans-serif !important; }
       .rate-box-outer-forms .the-mv-rate-box .rate-head h2:before {
         display: none; }
   .rate-box-outer-forms .the-mv-rate-box .forms {
@@ -330,8 +330,8 @@
 .rate-box-outer-forms .parsley-errors-list li {
   font: 12px/23px "Poppins", sans-serif;
   color: #e42222;
-  position: absolute;
-  bottom: -22px;
+/*   position: absolute;
+bottom: -22px; */
   list-style: none; }
 
 .select2-dropdown {
@@ -353,4 +353,15 @@
     margin-bottom: 5px;
     height: 40px !important; }
   .rate-box-outer-forms .the-mv-rate-box .forms label {
-    font: 12px/20px "Poppins", sans-serif; } }
+    font: 12px/15px "Poppins", sans-serif; } }
+
+@media (max-width: 767px) {
+  .rate-box-outer-forms .the-mv-rate-box .rate-head h2 {
+    font: 500 17px/17px "Poppins", sans-serif !important; }
+  .rate-box-outer-forms .the-mv-rate-box .rate-head i {
+    margin-right: 8px;
+    width: 22px; }
+  .rate-box-outer-forms .the-mv-rate-box .rate-head {
+    padding-left: 13px; }
+  .rate-box-outer-forms .footer button {
+    padding: 10px 10px; } }

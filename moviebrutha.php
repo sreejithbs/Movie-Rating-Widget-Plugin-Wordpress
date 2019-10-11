@@ -121,7 +121,7 @@ function rating_widget_table_uninstall()
 	$wpdb->query($sql);
 
 }
-register_deactivation_hook(__FILE__, 'rating_widget_table_uninstall');
+// register_deactivation_hook(__FILE__, 'rating_widget_table_uninstall');
 
 
 // Include CSS & JS
@@ -562,7 +562,7 @@ function html_form_code()
 					$columns = array(
 						'cb'        		=> '<input type="checkbox" />', //Render a checkbox instead of text
 						'created_at'        => 'Submission Date',
-						'runTime'       	=> 'Runtime',
+						'runTime'       	=> 'Runtime (minutes)',
 						'ageOfFilm' 		=> 'Age of Film',
 						'directorName'		=> 'Director Name & Score',
 						'ratingScore'      	=> 'Rating Score',
@@ -700,6 +700,7 @@ function html_form_code()
 
 						.rate-box-outer .forms ul {
 							padding-left: 0;
+							margin-bottom: 0;
 						}
 
 						.rate-box-outer .forms li {
@@ -707,10 +708,8 @@ function html_form_code()
 						}
 
 						.rate-box-outer .parsley-errors-list li {
-							font: 12px/23px "Poppins", sans-serif;
+							font: 11px/16px "Poppins", sans-serif;
 							color: #e42222;
-							position: absolute;
-							bottom: -22px;
 						}
 
 						.forms button:hover {
@@ -735,10 +734,10 @@ function html_form_code()
 						<div class="the-mv-rate-box" id="listaCategoriaA">
 							<div class="rate-head">
 								<div class="movie_brutha_logo">
-									<img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>'includes/img/m_brutha_logo.png'; ?>" alt="">
+									<img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/m_brutha_logo.png; ?>" alt="">
 								</div>
 
-								<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>'includes/img/star.png'; ?>" alt=""></i>
+								<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/star.png; ?>" alt=""></i>
 								<h2><?php echo $title[0]->title != '' ? $title[0]->title : "Ant’s Movie Model Predictor" ?></h2>
 							</div>
 							<div id="formDiv">
@@ -747,24 +746,24 @@ function html_form_code()
 										<div class="row">
 											<div class="col-md-6">
 												<div class="input-holder">
-													<label for="">Enter Film’s Runtime (hour)</label>
-													<input type="number" name="run_hour" id="run_hour" placeholder="Enter Film’s Runtime (hour)" data-parsley-required="true" data-parsley-type="digits">
+													<label for="">Enter Film’s Runtime hour(s)</label>
+													<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="100">
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="input-holder">
 													<label for="">Enter Film’s Runtime (minutes)</label>
-													<input type="number" name="run_minutes" id="run_minutes" placeholder="Enter Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits">
+													<input type="number" name="run_minutes" id="run_minutes" placeholder="Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="240">
 												</div>
 											</div>
 										</div>
 
 
 										<div class="input-holder">
-											<label for="">Enter Age of Film years</label>
+											<label for="">Select Age of Film (year)</label>
 											<div class="sl-bx">
 												<select name="age_of_film" id="age_of_film" data-parsley-required="true">
-													<option value="">Enter Age of Film years</option>
+													<option value="">Select Age of Film (year)</option>
 													<?php
 														$current_year = date("Y");
 														$start_year = $current_year - 5;
@@ -792,9 +791,8 @@ function html_form_code()
 										</div>
 										<div class="input-holder">
 											<label for="">Choose Film’s Genre(s)</label>
-											<div class="sl-bx">
+											<div class="sl-bx custom-error-handler">
 												<select name="genres[]" class="js-select2 genres" multiple="multiple" data-parsley-required="true">
-													<option value="">Choose Film’s Genre(s)</option>
 													<option value="Action">Action</option>
 													<option value="Adventure">Adventure</option>
 													<option value="Animation">Animation</option>
@@ -835,7 +833,7 @@ function html_form_code()
 							</div>
 						</div>
 						<button class="rate-button" id="btCategoriaA">
-							<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>'includes/img/star.png'; ?>" alt=""></i><span><?php echo $title[0]->title != '' ? $title[0]->title : "Ant’s Movie Model Predictor" ?></span>
+							<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/star.png; ?>" alt=""></i><span><?php echo $title[0]->title != '' ? $title[0]->title : "Ant’s Movie Model Predictor" ?></span>
 						</button>
 					</div>
 
@@ -1033,8 +1031,9 @@ function html_form_code()
 			}
 
 			$star_img = MOVIEBRUTHA_PLUGIN_URL .'includes/img/star.png';
+			$logo_img = MOVIEBRUTHA_PLUGIN_URL .'includes/img/m_brutha_overview.jpg';
 
-			$data = '<div class="movie-theme-outer"><h3>Overview</h3><p>'. $titleOverview[0]->overview .'</p>';
+			$data = '<div class="movie-theme-outer"><div class="overview-img"><img src="'.$logo_img.'" alt=""></div><h3>Overview</h3><p>'. $titleOverview[0]->overview .'</p>';
 
 			$data.= '<div class="rate-box-outer-forms">
 				<div class="the-mv-rate-box" id="listaCategoriaA">
@@ -1048,24 +1047,24 @@ function html_form_code()
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-holder">
-											<label for="">Enter Film’s Runtime (hour)</label>
-											<input type="number" name="run_hour" id="run_hour" placeholder="Enter Film’s Runtime (hour)" data-parsley-required="true" data-parsley-type="digits">
+											<label for="">Enter Film’s Runtime hour(s)</label>
+											<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="100">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="input-holder">
 											<label for="">Enter Film’s Runtime (minutes)</label>
-											<input type="number" name="run_minutes" id="run_minutes" placeholder="Enter Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits">
+											<input type="number" name="run_minutes" id="run_minutes" placeholder="Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="240">
 										</div>
 									</div>
 								</div>
 
 
 								<div class="input-holder">
-									<label for="">Enter Age of Film years</label>
+									<label for="">Select Age of Film (year)</label>
 									<div class="sl-bx">
 										<select name="age_of_film" id="age_of_film" data-parsley-required="true">
-											<option value="">Enter Age of Film years</option>'
+											<option value="">Select Age of Film (year)</option>'
 											. $options . '
 										</select>
 									</div>
@@ -1082,9 +1081,8 @@ function html_form_code()
 								</div>
 								<div class="input-holder">
 									<label for="">Choose Film’s Genre(s)</label>
-									<div class="sl-bx">
+									<div class="sl-bx custom-error-handler1">
 										<select name="genres[]" class="js-select2 genres" multiple="multiple" data-parsley-required="true">
-											<option value="">Choose Film’s Genre(s)</option>
 											<option value="Action">Action</option>
 											<option value="Adventure">Adventure</option>
 											<option value="Animation">Animation</option>

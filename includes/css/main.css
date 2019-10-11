@@ -72,6 +72,7 @@
     border-radius: 5px;
     text-align: left;
     outline: 0;
+    border:0 !important;
 
 }
 
@@ -113,10 +114,10 @@
     background: #EFEFEF;
     border-radius: 10px;
     border: 1px solid #e8e8e8;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-right: 15px;
     display: none;
-
+    position: relative;
     -webkit-box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 -moz-box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
@@ -234,7 +235,7 @@ box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 }
 
 .forms select {
-    padding-right: 30px;
+    padding-right: 30px !important;
     color: #797979;
 }
 .forms .sl-bx{
@@ -469,21 +470,23 @@ box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 .rate-box-outer-forms{
     margin-bottom: 35px;
     margin-top: 35px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .movie-theme-outer h3{
-    font:500 23px/27px "Poppins", sans-serif;
+    font:500 23px/27px "Poppins", sans-serif !important;
     margin-bottom:10px;
 }
 
 
 .movie-theme-outer p{
-    font:14px/23px "Poppins", sans-serif;
+    font:14px/23px "Poppins", sans-serif !important;
 }
 
 .movie-theme-outer .panel-title a{
     color: #e9a825 !important;
-    font:500 14px/23px "Poppins", sans-serif;
+    font:500 14px/23px "Poppins", sans-serif !important;
     text-decoration: none !important;
     outline: 0;
 }
@@ -493,8 +496,25 @@ background:#363839;
 }
 .movie-theme-outer .panel-title .collapsed{
      color: #fff !important;
-
 }
+
+.custom-error-handler .parsley-errors-list li{
+    position: absolute;
+    bottom: -17px;
+}
+
+.custom-error-handler1 .parsley-errors-list li{
+    position: absolute;
+    bottom: -25px;
+}
+
+.overview-img {
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+
+
 
 @media (max-width: 1679px) {
  .forms .sl-bx:after{
@@ -596,6 +616,12 @@ background: #111;
 }
 
 @media(max-width:991px){
+
+.overview-img {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
 .rate-box-outer .the-mv-rate-box .rate-head {
     padding-left: 20px;
     height: 43px;
@@ -613,6 +639,19 @@ background: #111;
 }
 
 @media(max-width: 767px){
+ .select2-container {
+    width: 240px !important;
+ }
+
+    .forms {
+    overflow: auto;
+    height: 300px;
+}
+
+    .rate-box-outer-forms .footer button{
+            font: 500 13px/23px "Poppins", sans-serif !important;
+    }
+
 .forms label {
     font: 11px/16px "Poppins", sans-serif;
 }
@@ -706,12 +745,13 @@ background: #111;
 }
 
 
+
+
 /* @media only screen and (orientation: landscape) { } */
 
 /* Landscape */
 @media screen
   and (max-width: 767px)
-  and (-webkit-device-pixel-ratio: 2)
   and (orientation: landscape) {
 
     .forms {

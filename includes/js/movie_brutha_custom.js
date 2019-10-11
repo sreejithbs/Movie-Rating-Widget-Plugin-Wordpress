@@ -168,8 +168,6 @@
                     console.log('inside handleFormSubmission error', data);
                 }
             });
-
-
         });
 
         // Show widget Form
@@ -182,7 +180,7 @@
 
         $(".js-select2").select2({
             closeOnSelect : false,
-            placeholder : "Select Genres",
+            placeholder : "Choose Film’s Genre(s)",
             allowClear: true,
         });
 
