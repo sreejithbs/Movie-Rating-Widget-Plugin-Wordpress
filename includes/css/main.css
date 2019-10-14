@@ -729,6 +729,10 @@ background: #111;
 
 @media(max-width:479px){
 
+.rate-box-outer .rate-button {
+    font: 500 15px/14px "Poppins", sans-serif !important;
+}
+
 .forms label {
     font: 10px/13px "Poppins", sans-serif;
 }
@@ -770,7 +774,6 @@ background: #111;
 }
 .rate-box-outer .rate-button {
     bottom: -43px;
-    font: 500 16px/24px "Poppins", sans-serif;
     height: 40px;
     padding: 4px 32px;
     }
