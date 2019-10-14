@@ -3,6 +3,7 @@
     "use strict";
 
     $(document).ready( function(){
+
         // Handle widget Form submission
         $("#widget_form_id").submit(function(e) {
             e.preventDefault();

@@ -340,7 +340,8 @@ bottom: -22px; */
 @media (max-width: 1679px) {
   .rate-box-outer-forms .the-mv-rate-box .forms .sl-bx:after {
     top: 19px; }
-
+  .movie_brutha_logo {
+    top: -28px; }
   .rate-box-outer-forms .the-mv-rate-box .forms input[type=email],
   .rate-box-outer-forms .the-mv-rate-box .forms input[type=number],
   .rate-box-outer-forms .the-mv-rate-box .forms input[type=password],
@@ -357,13 +358,13 @@ bottom: -22px; */
 
 @media(max-width: 1023px){
   .movie_brutha_logo {
-    top: -67px;
+    top: -39px;
   }
 }
 
 @media(max-width: 991px){
   .movie_brutha_logo {
-    top: -75px;
+    top: -35px;
    }
 
    .rate-box-outer .rate-button {
@@ -392,6 +393,6 @@ bottom: -22px; */
 
 @media(max-width: 479px){
   .movie_brutha_logo {
-    top: -75px;
+    top: -23px;
  }
 }

@@ -744,13 +744,13 @@ function html_form_code()
 								<form method="POST" action="#" id="widget_form_id" data-parsley-validate>
 									<div class="forms">
 										<div class="row">
-											<div class="col-md-6">
+											<div class="col-xs-6 pdg-rgt">
 												<div class="input-holder">
 													<label for="">Enter Film’s Runtime hour(s)</label>
-													<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="100">
+													<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="100" autofocus>
 												</div>
 											</div>
-											<div class="col-md-6">
+											<div class="col-xs-6 pdg-lft">
 												<div class="input-holder">
 													<label for="">Enter Film’s Runtime (minutes)</label>
 													<input type="number" name="run_minutes" id="run_minutes" placeholder="Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="240">
@@ -933,8 +933,8 @@ function html_form_code()
 			  "Western": ' . ($genresArr[20] ? 1 : 0) . '
 			}';
 
-			// $ch = curl_init('http://13.56.20.11/production/models/TradewindModel/predict');
-			$ch = curl_init('http://13.56.20.11/themoviebrutha/models/TradewindModel/predict');
+			$ch = curl_init('http://13.56.20.11/production/models/TradewindModel/predict');
+			// $ch = curl_init('http://13.56.20.11/themoviebrutha/models/TradewindModel/predict');
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 			curl_setopt($ch, CURLOPT_HEADER, false);
 			curl_setopt($ch, CURLOPT_USERPWD, 'spericorn:88a3eb31-9ede-4e62-ae0b-fb9a221ae9e0');
@@ -1031,7 +1031,7 @@ function html_form_code()
 			}
 
 			$star_img = MOVIEBRUTHA_PLUGIN_URL .'includes/img/star.png';
-			$logo_img = MOVIEBRUTHA_PLUGIN_URL .'includes/img/m_brutha_overview.jpg';
+			$logo_img = MOVIEBRUTHA_PLUGIN_URL .'includes/img/m_brutha_overview.png';
 
 			$data = '<div class="movie-theme-outer"><div class="overview-img"><img src="'.$logo_img.'" alt=""></div><h3>Overview</h3><p>'. $titleOverview[0]->overview .'</p>';
 
@@ -1045,13 +1045,13 @@ function html_form_code()
 						<form method="POST" action="#" id="widget_form_id" data-parsley-validate>
 							<div class="forms">
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-xs-6 pdg-rgt">
 										<div class="input-holder">
 											<label for="">Enter Film’s Runtime hour(s)</label>
-											<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="100">
+											<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="100" autofocus>
 										</div>
 									</div>
-									<div class="col-md-6">
+									<div class="col-xs-6 pdg-lft">
 										<div class="input-holder">
 											<label for="">Enter Film’s Runtime (minutes)</label>
 											<input type="number" name="run_minutes" id="run_minutes" placeholder="Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="240">

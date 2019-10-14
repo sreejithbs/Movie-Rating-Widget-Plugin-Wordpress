@@ -443,9 +443,9 @@ box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 }
 
 .movie_brutha_logo{
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+    width: 102px;
+    height: 102px;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -455,7 +455,7 @@ box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
     box-shadow: 2px 0px 17px -8px rgba(0,0,0,0.75);
     border:3px solid #fff;
     position: absolute;
-    top:-70px;
+    top:-33px;
     z-index: 9999;
     background:#111;
     left: 50%;
@@ -465,7 +465,7 @@ box-shadow: 2px 0px 17px -12px rgba(0,0,0,0.75);
 }
 
 .movie_brutha_logo img{
-      width:120px;
+    width:85px;
     }
 .rate-box-outer-forms{
     margin-bottom: 35px;
@@ -517,32 +517,12 @@ background:#363839;
 
 
 @media (max-width: 1679px) {
-
-
-.movie_brutha_logo{
-        top: -55px;
-}
-
-.movie_brutha_logo {
-width: 140px;
-height: 140px;
-}
-
-
-.movie_brutha_logo img {
-    width: 95px;
- }
-
-  .forms {
-    padding: 10px 24px 25px;
-    height: 300px;
-    overflow: auto;
- }
-
  .forms .sl-bx:after{
     top:24px;
 }
-
+.movie_brutha_logo{
+        top: -22px;
+}
 .forms input[type=email], .forms input[type=number], .forms input[type=password],
 .forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
     margin-bottom: 5px;
@@ -567,7 +547,9 @@ height: 140px;
     border-radius: 50px;
     left: -28px;
 }
-
+ .forms {
+    padding: 10px 24px 15px;
+}
 
 .forms label {
     font: 13px/23px "Poppins", sans-serif;
@@ -580,7 +562,9 @@ height: 140px;
 .rate-box-outer .the-mv-rate-box .rate-head h2 {
           font: 500 18px/23px "Poppins", sans-serif;
 }
-
+.movie_brutha_logo img {
+        width: 65px;
+}
 
     .rate-box-outer {
         position: fixed;
@@ -604,21 +588,13 @@ background: #111;
         height: 60px;
         padding: 7px 24px;
     }
-
+   .movie_brutha_logo {
+    width: 82px;
+    height: 82px;
+  }
 }
 
 @media(max-width: 1339px){
-
-  .movie_brutha_logo {
-    width: 170px;
-    height: 170px;
-    top: -67px;
- }
-.movie_brutha_logo img {
-    width: 115px;
-}
-
-
 .rate-box-outer .the-mv-rate-box .rate-head h2{
         font: 500 24px/23px "Poppins", sans-serif;
 }
@@ -626,8 +602,14 @@ background: #111;
     padding-left: 20px;
     height: 70px;
  }
-
-
+  .movie_brutha_logo {
+    width: 92px;
+    height: 92px;
+     top: -27px;
+ }
+ .movie_brutha_logo img {
+    width: 64px;
+ }
  .rate-box-outer .rate-button {
     font: 500 21px/24px "Poppins", sans-serif;
   }
@@ -648,38 +630,22 @@ background: #111;
 .forms input[type=email], .forms input[type=number], .forms input[type=password], .forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
     margin-bottom: 5px;
     height: 32px !important;
-    padding: 2px 15px;
+        padding: 2px 15px;
 }
-
-
 .select2-container .select2-selection--multiple {
     min-height: 30px!important;
-  }
+}
 
 }
 
 @media(max-width: 767px){
-
- .forms .pdg-lft {
-    padding-left: 3px !important;
- }
- .forms .pdg-rgt {
-    padding-right: 3px !important;
- }
-
  .select2-container {
     width: 240px !important;
  }
 
     .forms {
     overflow: auto;
-    height: 250px;
-    padding: 10px 24px 25px;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
+    height: 300px;
 }
 
     .rate-box-outer-forms .footer button{
@@ -687,7 +653,7 @@ background: #111;
     }
 
 .forms label {
-    font: 10px/12px "Poppins", sans-serif;
+    font: 11px/16px "Poppins", sans-serif;
 }
 .rate-box-outer .the-mv-rate-box .footer {
     height: 50px;
@@ -729,10 +695,6 @@ background: #111;
 
 @media(max-width:479px){
 
-.forms label {
-    font: 10px/13px "Poppins", sans-serif;
-}
-
 .rate-box-outer {
     bottom: 44px;
 }
@@ -745,25 +707,17 @@ background: #111;
     padding-top: 5px;
     padding-bottom: 5px;
  }
-
-/* .movie_brutha_logo {
+.movie_brutha_logo {
     width: 72px;
     height: 72px;
         top: -26px;
-} */
-/* .movie_brutha_logo img {
+}
+.movie_brutha_logo img {
     width: 55px;
-} */
-
-
-.forms{
-    padding: 25px 24px 10px;
 }
-
-.forms select{
-    margin-bottom: 10px;
-}
-
+.forms {
+    padding: 1px 24px 10px;
+ }
  .rate-box-outer .the-mv-rate-box .rate-head h2 {
 
     font: 500 16px/23px "Poppins", sans-serif;
@@ -784,11 +738,9 @@ background: #111;
     height: 52px;
     padding: 4px 24px;
  }
-
-
-/* .forms input[type=email], .forms input[type=number], .forms input[type=password], .forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
+.forms input[type=email], .forms input[type=number], .forms input[type=password], .forms input[type=tel], .forms input[type=text], .forms input[type=url], .forms select, .forms textarea {
     margin-bottom: 0;
-} */
+}
 
 }
 
@@ -808,12 +760,12 @@ background: #111;
     height: 110px;
 }
     .movie_brutha_logo {
-      width: 122px;
-    height: 122px;
-     top: -47px !important;
+    width: 72px;
+    height: 72px;
+       top: -23px;
   }
   .movie_brutha_logo img {
-    width:85px;
+    width: 44px;
 }
 .rate-box-outer {
         bottom: 50px;
