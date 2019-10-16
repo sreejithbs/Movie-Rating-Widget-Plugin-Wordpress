@@ -406,10 +406,7 @@ function html_form_code()
 	{
 		global $wpdb;
 		$rating_widget_title_overview = $wpdb->prefix . 'rating_widget_title_overview';
-		$rating_widget_faqs = $wpdb->prefix . 'rating_widget_faqs';
 		$title_overview = $wpdb->get_results("SELECT title, overview FROM $rating_widget_title_overview ORDER BY id ASC LIMIT 1");
-		$rating_faqs = $wpdb->get_results("SELECT * FROM $rating_widget_faqs", ARRAY_A);
-
 		?>
 		<div class="wrap">
 			<h1><strong>Text Settings</strong></h1>
@@ -433,6 +430,8 @@ function html_form_code()
 			<div class="row">
 				<div class="col-md-11 faq-cover-div">
 					<?php
+					$rating_widget_faqs = $wpdb->prefix . 'rating_widget_faqs';
+					$rating_faqs = $wpdb->get_results("SELECT * FROM $rating_widget_faqs", ARRAY_A);
 					if ($wpdb->num_rows > 0) {
 						foreach ($rating_faqs as $single) { ?>
 
@@ -734,10 +733,10 @@ function html_form_code()
 						<div class="the-mv-rate-box" id="listaCategoriaA">
 							<div class="rate-head">
 								<div class="movie_brutha_logo">
-									<img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/m_brutha_logo.png; ?>" alt="">
+									<img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/m_brutha_logo.png" alt="">
 								</div>
 
-								<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/star.png; ?>" alt=""></i>
+								<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/star.png" alt=""></i>
 								<h2><?php echo $title[0]->title != '' ? $title[0]->title : "Ant’s Movie Model Predictor" ?></h2>
 							</div>
 							<div id="formDiv">
@@ -833,7 +832,7 @@ function html_form_code()
 							</div>
 						</div>
 						<button class="rate-button" id="btCategoriaA">
-							<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/star.png; ?>" alt=""></i><span><?php echo $title[0]->title != '' ? $title[0]->title : "Ant’s Movie Model Predictor" ?></span>
+							<i><img src="<?php echo MOVIEBRUTHA_PLUGIN_URL ?>includes/img/star.png" alt=""></i><span><?php echo $title[0]->title != '' ? $title[0]->title : "Ant’s Movie Model Predictor" ?></span>
 						</button>
 					</div>
 
@@ -1010,6 +1009,7 @@ function html_form_code()
 
 			$importedLists = $wpdb->get_results("SELECT * FROM $rating_widget_imports", ARRAY_A);
 			$titleOverview = $wpdb->get_results("SELECT * FROM $rating_widget_title_overview ORDER BY id ASC LIMIT 1");
+
 			if($titleOverview[0]->title != ""){
 				$title = $titleOverview[0]->title;
 			} else{
