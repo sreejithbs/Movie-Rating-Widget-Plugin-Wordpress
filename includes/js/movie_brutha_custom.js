@@ -4,6 +4,25 @@
 
     $(document).ready( function(){
 
+        $('#run_hour').on('input',function(e){
+            $(".parsley-compute_mins").parent('ul').remove();
+        });
+
+        window.Parsley.addValidator('compute_mins', {
+            validate: function(input_val, id) {
+                var mins = parseInt(input_val) + parseInt($("#run_hour").val() * 60);
+
+                if(mins < 60 || mins > 300){
+                    return false;
+                }
+
+                return true;
+            },
+            messages: {
+                en: 'Total Runtime should be between 60 and 300 minutes.'
+            }
+        });
+
         // Handle widget Form submission
         $("#widget_form_id").submit(function(e) {
             e.preventDefault();
