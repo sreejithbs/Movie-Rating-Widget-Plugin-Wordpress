@@ -835,5 +835,11 @@ background: #111;
     left: -17px;
 }
 
+}
 
+@media (max-width: 767px){
+ .forms {
+    overflow-y: auto;
+    overflow-x: hidden;
+ }
 }
