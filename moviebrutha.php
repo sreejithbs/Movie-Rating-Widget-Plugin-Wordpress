@@ -746,13 +746,13 @@ function html_form_code()
 											<div class="col-xs-6 pdg-rgt">
 												<div class="input-holder">
 													<label for="">Enter Film’s Runtime hour(s)</label>
-													<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-max="4" autofocus value="0">
+													<input type="number" name="run_hour" id="run_hour" placeholder="Hours" data-parsley-required="true" data-parsley-type="digits" data-parsley-max="4" autofocus value="0">
 												</div>
 											</div>
 											<div class="col-xs-6 pdg-lft">
 												<div class="input-holder">
 													<label for="">Enter Film’s Runtime (minutes)</label>
-													<input type="number" name="run_minutes" id="run_minutes" placeholder="Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" value="0" data-parsley-compute_mins>
+													<input type="number" name="run_minutes" id="run_minutes" placeholder="Minutes" data-parsley-required="true" data-parsley-type="digits" value="0" data-parsley-compute_mins>
 												</div>
 											</div>
 										</div>
@@ -1048,13 +1048,13 @@ function html_form_code()
 									<div class="col-xs-6 pdg-rgt">
 										<div class="input-holder">
 											<label for="">Enter Film’s Runtime hour(s)</label>
-											<input type="number" name="run_hour" id="run_hour" placeholder="Film’s Runtime hour(s)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="4" autofocus value="0">
+											<input type="number" name="run_hour" id="run_hour" placeholder="Hours" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" data-parsley-max="4" autofocus value="0">
 										</div>
 									</div>
 									<div class="col-xs-6 pdg-lft">
 										<div class="input-holder">
 											<label for="">Enter Film’s Runtime (minutes)</label>
-											<input type="number" name="run_minutes" id="run_minutes" placeholder="Film’s Runtime (minutes)" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" value="0" data-parsley-compute_mins>
+											<input type="number" name="run_minutes" id="run_minutes" placeholder="Minutes" data-parsley-required="true" data-parsley-type="digits" data-parsley-min="0" value="0" data-parsley-compute_mins>
 										</div>
 									</div>
 								</div>
